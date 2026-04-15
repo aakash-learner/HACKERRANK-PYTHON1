@@ -1,0 +1,32 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import re
+
+def is_valid_float():
+    # Read the number of test cases
+    try:
+        t = int(input().strip())
+    except ValueError:
+        return
+
+    # Regex Pattern Breakdown:
+    # ^[+-]? : Optional leading + or - sign
+    # [0-9]* : Zero or more digits before the decimal point
+    # \.     : Exactly one literal decimal point
+    # [0-9]+ : One or more digits after the decimal point (ensures a decimal value exists)
+    # $      : End of the string
+    pattern = r'^[+-]?[0-9]*\.[0-9]+$'
+
+    for _ in range(t):
+        s = input().strip()
+        
+        # Check against regex and verify float() conversion doesn't raise an exception
+        try:
+            is_match = bool(re.match(pattern, s))
+            # float(s) will raise ValueError for invalid inputs like '4.0O0'
+            can_convert = float(s) is not None 
+            print(is_match and can_convert)
+        except ValueError:
+            print(False)
+
+if __name__ == "__main__":
+    is_valid_float()
