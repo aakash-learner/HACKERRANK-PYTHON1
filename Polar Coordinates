@@ -1,0 +1,14 @@
+import cmath
+
+# Read the input and convert it to a complex number
+z = complex(input())
+
+# Option 1: Get values individually
+r = abs(z)
+phi = cmath.phase(z)
+
+# Option 2: Get both at once
+# r, phi = cmath.polar(z)
+
+print(r)
+print(phi)
