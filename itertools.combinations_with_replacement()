@@ -1,0 +1,14 @@
+from itertools import combinations_with_replacement
+
+# Read the string and k
+s, k = input().split()
+
+# Sort the string to ensure lexicographic order
+s_sorted = sorted(s)
+
+# Generate combinations with replacement of size k
+combos = combinations_with_replacement(s_sorted, int(k))
+
+# Join and print each combination
+for combo in combos:
+    print("".join(combo))
