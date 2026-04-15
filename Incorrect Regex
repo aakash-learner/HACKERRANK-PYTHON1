@@ -1,0 +1,25 @@
+import re
+
+def solve():
+    try:
+        t = int(input())
+    except EOFError:
+        return
+
+    for _ in range(t):
+        try:
+            pattern = input()
+           
+            re.compile(pattern)
+            
+          
+            if "*+" in pattern or "++" in pattern or "?+" in pattern:
+                print("False")
+            else:
+                print("True")
+                
+        except re.error:
+            print("False")
+
+if __name__ == "__main__":
+    solve()
