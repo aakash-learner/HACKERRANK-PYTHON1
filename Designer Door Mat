@@ -1,0 +1,15 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+N, M = map(int, input().split())
+
+# Top part of the design
+for i in range(N // 2):
+    pattern = (".|." * (2 * i + 1))
+    print(pattern.center(M, '-'))
+
+# Middle 'WELCOME' part
+print("WELCOME".center(M, '-'))
+
+# Bottom part of the design (reverse of the top)
+for i in reversed(range(N // 2)):
+    pattern = (".|." * (2 * i + 1))
+    print(pattern.center(M, '-'))
