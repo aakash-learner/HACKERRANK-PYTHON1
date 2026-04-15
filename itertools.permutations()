@@ -1,0 +1,12 @@
+from itertools import permutations
+
+# Read the string and the integer k
+s, k = input().split()
+
+# Sort the string and find permutations of length k
+# Using sorted(s) ensures lexicographic order from the start
+perms = list(permutations(sorted(s), int(k)))
+
+# Join each tuple into a string and print line by line
+for p in perms:
+    print(''.join(p))
