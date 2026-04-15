@@ -1,0 +1,13 @@
+
+import numpy
+
+# Crucial for matching the required output format
+numpy.set_printoptions(legacy='1.13')
+
+# Read input and convert to a NumPy array of floats
+A = numpy.array(input().split(), float)
+
+# Print the requested operations
+print(numpy.floor(A))
+print(numpy.ceil(A))
+print(numpy.rint(A))
