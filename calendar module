@@ -1,0 +1,17 @@
+import calendar
+
+# Read input for month, day, and year
+# The input is read as a single line and then split into parts
+# The parts are converted to integers.
+month_str, day_str, year_str = input().split()
+month = int(month_str)
+day = int(day_str)
+year = int(year_str)
+
+# Use the calendar.weekday() function to get the day of the week as an integer (0-6, where Monday is 0)
+# Then use calendar.day_name list to get the full name of the day and convert it to uppercase
+day_of_week_num = calendar.weekday(year, month, day)
+day_of_week_name = calendar.day_name[day_of_week_num].upper()
+
+# Print the result
+print(day_of_week_name)
