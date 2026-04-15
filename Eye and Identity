@@ -1,0 +1,8 @@
+import numpy
+numpy.set_printoptions(legacy='1.13')
+
+# Use split() without arguments to handle any amount of whitespace
+dimensions = input().split()
+if dimensions:
+    n, m = map(int, dimensions)
+    print(numpy.eye(n, m))
