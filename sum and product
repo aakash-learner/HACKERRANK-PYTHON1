@@ -1,0 +1,21 @@
+import numpy
+
+# Read the dimensions of the array from input
+n, m = map(int, input().split())
+
+# Read the array elements into a list of lists
+arr_list = []
+for _ in range(n):
+    arr_list.append(list(map(int, input().split())))
+
+# Convert the list of lists to a NumPy array
+my_array = numpy.array(arr_list)
+
+# Compute the sum along axis 0
+sum_axis_0 = numpy.sum(my_array, axis=0)
+
+# Compute the product of the resulting sum array
+product_of_sum = numpy.prod(sum_axis_0)
+
+# Print the final result
+print(product_of_sum)
