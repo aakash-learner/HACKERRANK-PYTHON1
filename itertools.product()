@@ -1,0 +1,8 @@
+from itertools import product
+
+# Read input and convert to lists of integers
+A = list(map(int, input().split()))
+B = list(map(int, input().split()))
+
+# Compute the product and print space-separated tuples
+print(*product(A, B))
