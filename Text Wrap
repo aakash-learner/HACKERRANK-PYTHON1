@@ -1,0 +1,4 @@
+
+def wrap(string, max_width):
+    # textwrap.fill automatically breaks the string and joins it with \n
+    return textwrap.fill(string, max_width)
