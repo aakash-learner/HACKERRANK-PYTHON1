@@ -1,0 +1,27 @@
+from collections import defaultdict
+
+def solve():
+    # Read n and m
+    n, m = map(int, input().split())
+    
+    # Initialize defaultdict with list as the default factory
+    group_a = defaultdict(list)
+    
+    # 1. Fill group_a with 1-indexed positions
+    for i in range(1, n + 1):
+        word = input().strip()
+        group_a[word].append(str(i))
+    
+    # 2. Process group B
+    for _ in range(m):
+        word_b = input().strip()
+        
+        if word_b in group_a:
+            # Join the list of indices with a space
+            print(" ".join(group_a[word_b]))
+        else:
+            # Word never appeared in Group A
+            print("-1")
+
+if __name__ == '__main__':
+    solve()
