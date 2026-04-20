@@ -1,0 +1,13 @@
+from collections import namedtuple
+
+n = int(input())
+columns = input().split()
+Student = namedtuple('Student', columns)
+
+total_marks = 0
+for _ in range(n):
+    data = input().split()
+    s = Student(*data)
+    total_marks += int(s.MARKS)
+
+print("{:.2f}".format(total_marks / n))
